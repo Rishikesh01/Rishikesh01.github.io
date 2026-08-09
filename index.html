@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rishikesh Sripad Betigeri — Site Reliability Engineer</title>
+  <meta name="description" content="Site Reliability Engineer with 3 years of experience building and optimizing production Go services — APIs, event-driven systems, and distributed infrastructure.">
+  <meta property="og:title" content="Rishikesh Sripad Betigeri — Site Reliability Engineer">
+  <meta property="og:description" content="I make Go services fast. APIs, event-driven pipelines, and distributed infrastructure.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2322d3ee'/%3E%3Cstop offset='1' stop-color='%23a78bfa'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3Ctext x='16' y='22' font-family='system-ui,sans-serif' font-size='15' font-weight='700' fill='%230a0b10' text-anchor='middle'%3ERB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="container nav">
+      <a class="nav-name" href="#top">RB<span class="nav-dot">.</span></a>
+      <div class="nav-links">
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a class="nav-cta" href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <p class="hero-status reveal"><span class="pulse"></span>Site Reliability Engineer @ Obmondo</p>
+        <h1 class="hero-name reveal">
+          RISHIKESH SRIPAD<br>
+          <span class="gradient-text">BETIGERI</span>
+        </h1>
+        <p class="hero-tagline reveal">I make Go services <em>fast</em>.</p>
+        <p class="hero-summary reveal">
+          Three years building APIs, event-driven pipelines, and distributed
+          infrastructure that stay up and stay quick. Based in Hyderabad, India.
+        </p>
+        <div class="hero-links reveal">
+          <a class="btn btn-primary" href="mailto:rishikesh.betigeri@outlook.com">Email me</a>
+          <a class="btn" href="https://github.com/Rishikesh01" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://linkedin.com/in/rishikeshbetigeri" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+      <div class="container">
+        <div class="stat-grid reveal">
+          <div class="stat">
+            <p class="stat-value"><span class="count" data-target="250">0</span>×</p>
+            <p class="stat-label">smaller payloads<br>25 MB → 100 KB per request</p>
+          </div>
+          <div class="stat">
+            <p class="stat-value"><span class="count" data-target="10">0</span>×</p>
+            <p class="stat-label">faster queries<br>1–2 s → 150–200 ms</p>
+          </div>
+          <div class="stat">
+            <p class="stat-value"><span class="count" data-target="1.45" data-decimals="2">0</span>M</p>
+            <p class="stat-label">apps crawled<br>concurrent Go crawler</p>
+          </div>
+          <div class="stat">
+            <p class="stat-value"><span class="count" data-target="17">0</span>M</p>
+            <p class="stat-label">log lines parsed in 6.3 s<br>outperforming grep</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="container">
+      <h2 class="section-title reveal"><span class="section-index">01</span> Experience</h2>
+
+      <article class="job reveal">
+        <div class="job-head">
+          <h3>Site Reliability Engineer · <span class="job-company">Obmondo</span></h3>
+          <p class="job-dates">Aug 2023 — Present</p>
+        </div>
+        <ul>
+          <li>Own Go backend features end-to-end — from design through production deployment on
+              Kubernetes via Helm charts; review pull requests and mentor teammates.</li>
+          <li>Built an event-driven email-notification flow that enqueues delivery jobs in the
+              <em>same Postgres transaction</em> as the triggering write (gue, Postgres-backed queue),
+              eliminating dual-write failure windows.</li>
+          <li>Built a credential-provisioning API for customer onboarding with an idempotent work
+              queue, atomic persistence, and automated recovery.</li>
+          <li>Migrated and optimized a legacy API, cutting third-party data retrieval from
+              <em>25&nbsp;MB to 100&nbsp;KB</em> per request — a 250× reduction.</li>
+          <li>Optimized SQL on a high-latency API path, bringing response times down from
+              1–2&nbsp;s to <em>150–200&nbsp;ms</em>; separately diagnosed and fixed race conditions
+              in the Redis caching layer.</li>
+          <li>Led the design and build of a CVE service — fix-availability and severity scores
+              served through a cached query pipeline — used by the company's largest customer.</li>
+          <li>Root-caused intermittent production data loss to asynchronous replication during a
+              Postgres (CloudNativePG) failover and identified synchronous commit as the
+              durability fix.</li>
+        </ul>
+      </article>
+
+      <article class="job reveal">
+        <div class="job-head">
+          <h3>Backend Developer Intern · <span class="job-company">GreedyGame</span></h3>
+          <p class="job-dates">Oct 2022 — Dec 2022</p>
+        </div>
+        <ul>
+          <li>Built a high-performance log parser processing <em>17M lines (1.5&nbsp;GB) in
+              6.3&nbsp;s</em> and 51M lines (6&nbsp;GB) in 20&nbsp;s — outperforming grep.</li>
+          <li>Designed a concurrent Play Store crawler in Go using goroutines, crawling
+              <em>~1.45M apps</em>.</li>
+          <li>Developed a notification service scanning <em>61 apps/sec</em> for Play Store metric
+              changes, alerting customers via email.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="container">
+      <h2 class="section-title reveal"><span class="section-index">02</span> Projects</h2>
+      <div class="project-grid">
+
+        <a class="project-card featured reveal" href="https://github.com/Rishikesh01/homeserver" target="_blank" rel="noopener">
+          <div class="project-card-inner">
+            <h3>homeserver</h3>
+            <p>Self-hosted home-network stack — password manager, cloud storage, and network
+               ad-blocker, all behind real HTTPS on your LAN. One Go binary
+               (<code>hsctl</code>) installs it, runs it, and serves a web dashboard; backups are
+               proven by automated restore drills, not hoped for.</p>
+            <p class="project-tags"><span>Go</span><span>Docker</span><span>Caddy</span><span>CI</span></p>
+          </div>
+        </a>
+
+        <a class="project-card reveal" href="https://github.com/Rishikesh01/gaft" target="_blank" rel="noopener">
+          <div class="project-card-inner">
+            <h3>gaft</h3>
+            <p>A Raft consensus implementation in Go, written from the paper — leader election,
+               heartbeats, and log replication across follower, candidate, and leader states.</p>
+            <p class="project-tags"><span>Go</span><span>Distributed Systems</span></p>
+          </div>
+        </a>
+
+        <a class="project-card reveal" href="https://github.com/Rishikesh01/mokdb" target="_blank" rel="noopener">
+          <div class="project-card-inner">
+            <h3>mokdb</h3>
+            <p>A SQL database engine being built from scratch in Rust — hand-written scanner and
+               recursive-descent parser producing a typed AST.</p>
+            <p class="project-tags"><span>Rust</span><span>Databases</span><span>In progress</span></p>
+          </div>
+        </a>
+
+      </div>
+      <p class="projects-more reveal">More on <a href="https://github.com/Rishikesh01?tab=repositories" target="_blank" rel="noopener">GitHub →</a></p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="container">
+      <h2 class="section-title reveal"><span class="section-index">03</span> Skills</h2>
+      <div class="skill-group reveal">
+        <h3>Languages</h3>
+        <p class="skill-tags"><span>Go</span><span>SQL</span></p>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Backend &amp; Data</h3>
+        <p class="skill-tags"><span>REST APIs</span><span>Microservices</span><span>Event-Driven Architecture</span><span>Job Queues</span><span>Distributed Systems</span><span>Concurrency</span><span>Caching</span><span>PostgreSQL</span><span>Redis</span><span>Performance Optimization</span></p>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Tooling</h3>
+        <p class="skill-tags"><span>Docker</span><span>Kubernetes</span><span>Helm</span><span>Linux</span><span>Prometheus</span><span>Git</span></p>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="container">
+      <h2 class="section-title reveal"><span class="section-index">04</span> Education</h2>
+      <div class="job-head reveal">
+        <h3>B.Tech in Computer Science</h3>
+        <p class="job-dates">2019 — 2023</p>
+      </div>
+      <p class="edu-school reveal">Swami Vivekananda Institute of Technology, Hyderabad</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box reveal">
+          <h2 class="contact-title">Let's build something <span class="gradient-text">fast</span>.</h2>
+          <p class="contact-sub">Open to interesting backend problems — reach out any time.</p>
+          <div class="hero-links contact-links">
+            <a class="btn btn-primary" href="mailto:rishikesh.betigeri@outlook.com">rishikesh.betigeri@outlook.com</a>
+            <a class="btn" href="https://github.com/Rishikesh01" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn" href="https://linkedin.com/in/rishikeshbetigeri" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Rishikesh Sripad Betigeri · Built with plain HTML &amp; CSS</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
