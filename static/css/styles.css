@@ -672,8 +672,7 @@ section {
   margin-bottom: 0.5rem;
 }
 
-.blog-sub {
-  color: var(--text-muted);
+.blog-head {
   margin-bottom: 2.5rem;
 }
 
