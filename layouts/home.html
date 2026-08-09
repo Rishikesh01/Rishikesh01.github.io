@@ -10,37 +10,13 @@
     </h1>
     <p class="hero-tagline reveal">Interested in backend systems, distributed systems, databases, and the <em>engineering</em> behind them.</p>
     <p class="hero-summary reveal">
-      Three years building APIs, event-driven pipelines, and distributed
-      infrastructure that stay up and stay quick. Based in Hyderabad, India.
+      I build APIs, event-driven pipelines, and the infrastructure behind them.
+      Based in Hyderabad, India.
     </p>
     <div class="hero-links reveal">
-      <a class="btn btn-primary" href="mailto:rishikesh.betigeri@outlook.com">Email me</a>
-      <a class="btn" href="https://github.com/Rishikesh01" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-primary" href="https://github.com/Rishikesh01" target="_blank" rel="noopener">GitHub</a>
       <a class="btn" href="https://linkedin.com/in/rishikeshbetigeri" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-  </div>
-</section>
-
-<!-- Stats -->
-<section class="stats">
-  <div class="container">
-    <div class="stat-grid reveal">
-      <div class="stat">
-        <p class="stat-value"><span class="count" data-target="250">0</span>×</p>
-        <p class="stat-label">smaller payloads<br>25 MB → 100 KB per request</p>
-      </div>
-      <div class="stat">
-        <p class="stat-value"><span class="count" data-target="10">0</span>×</p>
-        <p class="stat-label">faster queries<br>1–2 s → 150–200 ms</p>
-      </div>
-      <div class="stat">
-        <p class="stat-value"><span class="count" data-target="1.45" data-decimals="2">0</span>M</p>
-        <p class="stat-label">apps crawled<br>concurrent Go crawler</p>
-      </div>
-      <div class="stat">
-        <p class="stat-value"><span class="count" data-target="17">0</span>M</p>
-        <p class="stat-label">log lines parsed in 6.3 s<br>outperforming grep</p>
-      </div>
+      <a class="btn" href="mailto:rishikesh.betigeri@outlook.com">Email</a>
     </div>
   </div>
 </section>
@@ -54,25 +30,6 @@
       <h3>Site Reliability Engineer · <span class="job-company">Obmondo</span></h3>
       <p class="job-dates">Aug 2023 — Present</p>
     </div>
-    <ul>
-      <li>Own Go backend features end-to-end — from design through production deployment on
-          Kubernetes via Helm charts; review pull requests and mentor teammates.</li>
-      <li>Built an event-driven email-notification flow that enqueues delivery jobs in the
-          <em>same Postgres transaction</em> as the triggering write (gue, Postgres-backed queue),
-          eliminating dual-write failure windows.</li>
-      <li>Built a credential-provisioning API for customer onboarding with an idempotent work
-          queue, atomic persistence, and automated recovery.</li>
-      <li>Migrated and optimized a legacy API, cutting third-party data retrieval from
-          <em>25&nbsp;MB to 100&nbsp;KB</em> per request — a 250× reduction.</li>
-      <li>Optimized SQL on a high-latency API path, bringing response times down from
-          1–2&nbsp;s to <em>150–200&nbsp;ms</em>; separately diagnosed and fixed race conditions
-          in the Redis caching layer.</li>
-      <li>Led the design and build of a CVE service — fix-availability and severity scores
-          served through a cached query pipeline — used by the company's largest customer.</li>
-      <li>Root-caused intermittent production data loss to asynchronous replication during a
-          Postgres (CloudNativePG) failover and identified synchronous commit as the
-          durability fix.</li>
-    </ul>
   </article>
 
   <article class="job reveal">
@@ -80,14 +37,6 @@
       <h3>Backend Developer Intern · <span class="job-company">GreedyGame</span></h3>
       <p class="job-dates">Oct 2022 — Dec 2022</p>
     </div>
-    <ul>
-      <li>Built a high-performance log parser processing <em>17M lines (1.5&nbsp;GB) in
-          6.3&nbsp;s</em> and 51M lines (6&nbsp;GB) in 20&nbsp;s — outperforming grep.</li>
-      <li>Designed a concurrent Play Store crawler in Go using goroutines, crawling
-          <em>~1.45M apps</em>.</li>
-      <li>Developed a notification service scanning <em>61 apps/sec</em> for Play Store metric
-          changes, alerting customers via email.</li>
-    </ul>
   </article>
 </section>
 
@@ -154,21 +103,6 @@
     <p class="job-dates">2019 — 2023</p>
   </div>
   <p class="edu-school reveal">Swami Vivekananda Institute of Technology, Hyderabad</p>
-</section>
-
-<!-- Contact -->
-<section id="contact">
-  <div class="container">
-    <div class="contact-box reveal">
-      <h2 class="contact-title">Let's build something <span class="gradient-text">fast</span>.</h2>
-      <p class="contact-sub">Open to interesting backend problems — reach out any time.</p>
-      <div class="hero-links contact-links">
-        <a class="btn btn-primary" href="mailto:rishikesh.betigeri@outlook.com">rishikesh.betigeri@outlook.com</a>
-        <a class="btn" href="https://github.com/Rishikesh01" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="https://linkedin.com/in/rishikeshbetigeri" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-    </div>
-  </div>
 </section>
 
 {{ end }}
