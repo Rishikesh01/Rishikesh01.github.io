@@ -4,6 +4,7 @@
     <h1 class="blog-title">Blog</h1>
     <p class="blog-sub">Notes on Go, reliability, and making backend systems fast.</p>
   </header>
+  {{ if .Pages }}
   <div class="post-list">
     {{ range .Pages }}
     <a class="post-row reveal" href="{{ .RelPermalink }}">
@@ -15,5 +16,8 @@
     </a>
     {{ end }}
   </div>
+  {{ else }}
+  <p class="blog-empty reveal">First post coming soon.</p>
+  {{ end }}
 </section>
 {{ end }}

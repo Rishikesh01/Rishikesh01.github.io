@@ -129,26 +129,9 @@
   <p class="projects-more reveal">More on <a href="https://github.com/Rishikesh01?tab=repositories" target="_blank" rel="noopener">GitHub →</a></p>
 </section>
 
-<!-- Writing -->
-{{ $posts := where site.RegularPages "Section" "blog" }}
-{{ if $posts }}
-<section id="writing" class="container">
-  <h2 class="section-title reveal"><span class="section-index">03</span> Writing</h2>
-  <div class="post-list">
-    {{ range first 3 $posts }}
-    <a class="post-row reveal" href="{{ .RelPermalink }}">
-      <span class="post-row-title">{{ .Title }}</span>
-      <span class="post-row-date">{{ .Date.Format "Jan 2, 2006" }}</span>
-    </a>
-    {{ end }}
-  </div>
-  <p class="projects-more reveal"><a href="/blog/">All posts →</a></p>
-</section>
-{{ end }}
-
 <!-- Skills -->
 <section id="skills" class="container">
-  <h2 class="section-title reveal"><span class="section-index">04</span> Skills</h2>
+  <h2 class="section-title reveal"><span class="section-index">03</span> Skills</h2>
   <div class="skill-group reveal">
     <h3>Languages</h3>
     <p class="skill-tags"><span>Go</span><span>SQL</span></p>
@@ -165,7 +148,7 @@
 
 <!-- Education -->
 <section id="education" class="container">
-  <h2 class="section-title reveal"><span class="section-index">05</span> Education</h2>
+  <h2 class="section-title reveal"><span class="section-index">04</span> Education</h2>
   <div class="job-head reveal">
     <h3>B.Tech in Computer Science</h3>
     <p class="job-dates">2019 — 2023</p>
