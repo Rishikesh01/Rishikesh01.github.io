@@ -48,4 +48,19 @@ const countObserver = new IntersectionObserver(
 
 document.querySelectorAll(".count").forEach((el) => countObserver.observe(el));
 
+// Theme toggle: system preference by default, explicit choice saved to localStorage
+const themeToggle = document.getElementById("theme-toggle");
+
+function currentTheme() {
+  const explicit = document.documentElement.getAttribute("data-theme");
+  if (explicit) return explicit;
+  return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+}
+
+themeToggle.addEventListener("click", () => {
+  const next = currentTheme() === "dark" ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", next);
+  localStorage.setItem("theme", next);
+});
+
 document.getElementById("year").textContent = new Date().getFullYear();

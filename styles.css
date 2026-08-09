@@ -1,5 +1,6 @@
-/* ---------- Tokens (committed dark design) ---------- */
+/* ---------- Tokens (dark-first design; light mode below) ---------- */
 :root {
+  color-scheme: dark;
   --bg: #0a0b10;
   --bg-soft: #12141d;
   --bg-card: #10121a;
@@ -9,8 +10,39 @@
   --accent-2: #a78bfa;
   --border: #232735;
   --gradient: linear-gradient(100deg, var(--accent), var(--accent-2));
+  --on-gradient: #0a0b10;
   --font-display: "Space Grotesk", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
+}
+
+/* Light palette: darker accent stops so gradient text and markers
+   keep their contrast on white */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #fafbfd;
+  --bg-soft: #f1f4f9;
+  --bg-card: #ffffff;
+  --text: #14171f;
+  --text-muted: #5b6472;
+  --accent: #0e7490;
+  --accent-2: #7c3aed;
+  --border: #dde3ec;
+  --on-gradient: #ffffff;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --bg: #fafbfd;
+    --bg-soft: #f1f4f9;
+    --bg-card: #ffffff;
+    --text: #14171f;
+    --text-muted: #5b6472;
+    --accent: #0e7490;
+    --accent-2: #7c3aed;
+    --border: #dde3ec;
+    --on-gradient: #ffffff;
+  }
 }
 
 /* ---------- Base ---------- */
@@ -159,6 +191,37 @@ h1, h2, h3 {
   color: var(--accent) !important;
 }
 
+#theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: border-color 120ms ease, color 120ms ease;
+}
+
+#theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Show the icon of the theme you'd switch TO (design is dark-first) */
+.icon-sun { display: block; }
+.icon-moon { display: none; }
+
+:root[data-theme="light"] .icon-sun { display: none; }
+:root[data-theme="light"] .icon-moon { display: block; }
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .icon-sun { display: none; }
+  :root:not([data-theme="dark"]) .icon-moon { display: block; }
+}
+
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
@@ -273,7 +336,7 @@ h1, h2, h3 {
 .btn-primary {
   background: var(--gradient);
   border: none;
-  color: #0a0b10;
+  color: var(--on-gradient);
 }
 
 .btn-primary:hover {
