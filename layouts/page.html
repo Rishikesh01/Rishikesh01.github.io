@@ -1,0 +1,13 @@
+{{ define "main" }}
+<article class="container post">
+  <header class="post-header reveal">
+    <p class="post-meta">{{ .Date.Format "January 2, 2006" }} · {{ .ReadingTime }} min read</p>
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{ with .Description }}<p class="post-desc">{{ . }}</p>{{ end }}
+  </header>
+  <div class="prose reveal">
+    {{ .Content }}
+  </div>
+  <p class="post-back reveal"><a href="/blog/">← All posts</a></p>
+</article>
+{{ end }}

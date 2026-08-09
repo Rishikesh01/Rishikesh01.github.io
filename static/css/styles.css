@@ -13,6 +13,12 @@
   --on-gradient: #0a0b10;
   --font-display: "Space Grotesk", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --code-comment: #6b7487;
+  --code-keyword: #a78bfa;
+  --code-string: #34d399;
+  --code-number: #fbbf24;
+  --code-func: #22d3ee;
 }
 
 /* Light palette: darker accent stops so gradient text and markers
@@ -28,6 +34,11 @@
   --accent-2: #7c3aed;
   --border: #dde3ec;
   --on-gradient: #ffffff;
+  --code-comment: #6b7280;
+  --code-keyword: #7c3aed;
+  --code-string: #059669;
+  --code-number: #b45309;
+  --code-func: #0e7490;
 }
 
 @media (prefers-color-scheme: light) {
@@ -42,6 +53,11 @@
     --accent-2: #7c3aed;
     --border: #dde3ec;
     --on-gradient: #ffffff;
+    --code-comment: #6b7280;
+    --code-keyword: #7c3aed;
+    --code-string: #059669;
+    --code-number: #b45309;
+    --code-func: #0e7490;
   }
 }
 
@@ -588,6 +604,234 @@ section {
   justify-content: center;
 }
 
+/* ---------- Blog: post lists ---------- */
+.post-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0.25rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  transition: transform 120ms ease;
+}
+
+.post-row:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.post-row:hover {
+  text-decoration: none;
+  transform: translateX(4px);
+}
+
+.post-row:hover .post-row-title {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.post-row-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.post-row-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.post-row-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.post-row-date {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.blog-index {
+  min-height: 55vh;
+  padding-top: 4rem;
+}
+
+.blog-title {
+  font-size: clamp(2.2rem, 7vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.blog-sub {
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+}
+
+/* ---------- Blog: single post ---------- */
+.post {
+  max-width: 720px;
+  padding-top: 4rem;
+}
+
+.post-meta {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.post-title {
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.post-desc {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+.post-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-back {
+  margin-top: 3rem;
+}
+
+/* ---------- Prose (rendered Markdown) ---------- */
+.prose {
+  font-size: 1.02rem;
+}
+
+.prose h2,
+.prose h3 {
+  letter-spacing: -0.01em;
+  margin: 2.2rem 0 0.8rem;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+}
+
+.prose h3 {
+  font-size: 1.2rem;
+}
+
+.prose p {
+  margin-bottom: 1.1rem;
+}
+
+.prose ul,
+.prose ol {
+  margin: 0 0 1.1rem 1.4rem;
+}
+
+.prose li {
+  margin-bottom: 0.4rem;
+}
+
+.prose blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1.1rem;
+  margin: 1.4rem 0;
+  color: var(--text-muted);
+}
+
+.prose img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin: 1.4rem 0;
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+.prose table {
+  border-collapse: collapse;
+  margin: 1.4rem 0;
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+.prose th,
+.prose td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.8rem;
+  text-align: left;
+}
+
+.prose th {
+  background: var(--bg-soft);
+}
+
+/* Code blocks (Chroma emits .highlight > pre.chroma) */
+.prose .highlight {
+  margin: 1.4rem 0;
+}
+
+.prose pre {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.prose pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+/* Chroma token colors — theme-aware via tokens */
+.chroma .c, .chroma .c1, .chroma .cm, .chroma .ch, .chroma .cs,
+.chroma .cp, .chroma .cpf { color: var(--code-comment); font-style: italic; }
+.chroma .k, .chroma .kc, .chroma .kd, .chroma .kn, .chroma .kp,
+.chroma .kr, .chroma .kt, .chroma .nt { color: var(--code-keyword); }
+.chroma .s, .chroma .s1, .chroma .s2, .chroma .sa, .chroma .sb,
+.chroma .sc, .chroma .dl, .chroma .sd, .chroma .se, .chroma .sh,
+.chroma .si, .chroma .sx, .chroma .sr, .chroma .ss { color: var(--code-string); }
+.chroma .m, .chroma .mb, .chroma .mf, .chroma .mh, .chroma .mi,
+.chroma .il, .chroma .mo { color: var(--code-number); }
+.chroma .nf, .chroma .fm, .chroma .nx { color: var(--code-func); }
+
+/* ---------- 404 ---------- */
+.notfound {
+  min-height: 55vh;
+  padding-top: 5rem;
+}
+
+.notfound .hero-summary {
+  margin-top: 1rem;
+}
+
+/* ---------- Nav active state ---------- */
+.nav-links a.nav-active {
+  color: var(--accent);
+}
+
 /* ---------- Footer ---------- */
 .site-footer {
   border-top: 1px solid var(--border);
@@ -616,7 +860,7 @@ section {
     gap: 0.9rem;
   }
 
-  .nav-links a:not(.nav-cta) {
+  .nav-links a:not(.nav-cta):not([href="/blog/"]) {
     display: none;
   }
 

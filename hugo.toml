@@ -1,0 +1,12 @@
+baseURL = "https://rishikesh01.github.io/"
+locale = "en"
+title = "Rishikesh Sripad Betigeri"
+timeZone = "Asia/Kolkata"
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  description = "Site Reliability Engineer with 3 years of experience building and optimizing production Go services — APIs, event-driven systems, and distributed infrastructure."
+
+[markup]
+  [markup.highlight]
+    noClasses = false

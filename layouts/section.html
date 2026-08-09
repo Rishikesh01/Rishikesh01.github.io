@@ -1,0 +1,19 @@
+{{ define "main" }}
+<section class="container blog-index">
+  <header class="blog-head reveal">
+    <h1 class="blog-title">Blog</h1>
+    <p class="blog-sub">Notes on Go, reliability, and making backend systems fast.</p>
+  </header>
+  <div class="post-list">
+    {{ range .Pages }}
+    <a class="post-row reveal" href="{{ .RelPermalink }}">
+      <span class="post-row-main">
+        <span class="post-row-title">{{ .Title }}</span>
+        {{ with .Description }}<span class="post-row-desc">{{ . }}</span>{{ end }}
+      </span>
+      <span class="post-row-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+    </a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
